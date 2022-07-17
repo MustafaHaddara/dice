@@ -27,6 +27,7 @@ import os
 from asset_loader import sibling_path
 
 config_file_path = sibling_path('config.json')
+print(config_file_path)
 if os.path.exists(config_file_path):
     with open(config_file_path) as j:
         config_data = json.load(j)
@@ -52,3 +53,14 @@ if os.path.exists(config_file_path):
             POINTS_PER_BLOCK = config_data['POINTS_PER_BLOCK']
         if config_data.get('SLOWDOWN_PER_BLOCK') is not None:
             SLOWDOWN_PER_BLOCK = config_data['SLOWDOWN_PER_BLOCK']
+
+print('BLOCK_SPAWN_MIN_RATE', BLOCK_SPAWN_MIN_RATE)
+print('BLOCK_SPAWN_MAX_RATE', BLOCK_SPAWN_MAX_RATE)
+print('LEVEL_2', LEVEL_2)
+print('LEVEL_3', LEVEL_3)
+print('LEVEL_4', LEVEL_4)
+print('ACCELERATION_FRAME_COUNT', ACCELERATION_FRAME_COUNT)
+print('STARTING_SPEED', STARTING_SPEED)
+print('ACCELERATION_AMOUNT', ACCELERATION_AMOUNT)
+print('POINTS_PER_BLOCK', POINTS_PER_BLOCK)
+print('SLOWDOWN_PER_BLOCK', SLOWDOWN_PER_BLOCK)
