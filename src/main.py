@@ -10,7 +10,7 @@ import pygame
 import pygame_menu
 
 from asset_loader import asset_path
-from config import SCREEN_HEIGHT, SCREEN_WIDTH
+from config import SCREEN_HEIGHT, SCREEN_WIDTH, BLOCK_SPAWN_MIN_RATE, BLOCK_SPAWN_MAX_RATE, LEVEL_2, LEVEL_3, LEVEL_4
 from gameobjects.background import BACKGROUND_IMAGE, Background
 from gameobjects.block import Block
 from gameobjects.player import Player
@@ -39,15 +39,7 @@ DISPLAYSURF = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 DISPLAYSURF.fill(WHITE)
 pygame.display.set_caption("Dice")
 
-
-BLOCK_SPAWN_MIN_RATE = 40
-BLOCK_SPAWN_MAX_RATE = 60
 NEXT_BLOCK_SPAWN = int( (BLOCK_SPAWN_MIN_RATE + BLOCK_SPAWN_MAX_RATE) / 2 )
-
-
-LEVEL_2 = 600
-LEVEL_3 = 1200
-LEVEL_4 = 1800
 LANES = [1,2,3,4,5]
 
 def start_the_game():
