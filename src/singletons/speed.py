@@ -10,14 +10,16 @@ class __SpeedManager(GameObject):
     def update(self, _events):
         self.tick += 1
         if self.tick > ACCELERATION_FRAME_COUNT:
-            self.y_speed += ACCELERATION_AMOUNT
+            self.adjust_speed(ACCELERATION_AMOUNT)
             self.tick = 0
 
     def render(self, surface):
         pass
 
     def adjust_speed(self, inc):
-        self.y_speed += inc
+        self.y_speed = round(self.y_speed + inc, 3)
+        if self.y_speed > STARTING_SPEED:
+            self.y_speed = STARTING_SPEED
     
     def reset(self):
         self.y_speed = STARTING_SPEED
