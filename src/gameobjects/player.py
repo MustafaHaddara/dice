@@ -51,11 +51,11 @@ class Player(GameObject):
                     self.set_face(2)
                 if event.key == pygame.K_3:
                     self.set_face(3)
-                if event.key == pygame.K_4:
+                if event.key in [pygame.K_4, pygame.K_q]:
                     self.set_face(4)
-                if event.key == pygame.K_5:
+                if event.key in [pygame.K_5, pygame.K_w]:
                     self.set_face(5)
-                if event.key == pygame.K_6:
+                if event.key in [pygame.K_6, pygame.K_e]:
                     self.set_face(6)
 
     def set_face(self, face_num):
