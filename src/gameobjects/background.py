@@ -1,8 +1,6 @@
-import os
 import pygame
 
 from asset_loader import asset_path
-from config import SCREEN_HEIGHT
 from gameobjects.base import GameObject
 from singletons.speed import speed_manager
 
