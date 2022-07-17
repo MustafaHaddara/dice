@@ -1,0 +1,10 @@
+altgraph==0.17.2
+importlib-metadata==4.12.0
+macholib==1.16
+pygame==2.1.2
+pygame-menu==4.2.8
+pyinstaller==5.2
+pyinstaller-hooks-contrib==2022.8
+pyperclip==1.8.2
+typing_extensions==4.3.0
+zipp==3.8.1
