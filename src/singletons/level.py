@@ -24,5 +24,6 @@ class __LevelManager(GameObject):
     
     def reset(self):
         self.level = 1
+        self.tick = 0
 
 level_manager = __LevelManager()
