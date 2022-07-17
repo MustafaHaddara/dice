@@ -1,7 +1,7 @@
 from random import randint
 
 from gameobjects.base import GameObject
-from sprites.dice import DICE_IMAGES
+from sprites.dice import ENEMY_IMAGES
 from singletons.score import score_manager
 from singletons.speed import speed_manager
 
@@ -9,7 +9,7 @@ class Block(GameObject):
     def __init__(self, pos):
         super().__init__(None, pos, [0, -4])
         self.value = randint(1,6)
-        self.image = DICE_IMAGES[self.value]
+        self.image = ENEMY_IMAGES[self.value]
         self.tick = 0
         self.padding = [4,4]
 
