@@ -1,6 +1,6 @@
 import pygame
 
-from config import SCREEN_HEIGHT, SCREEN_WIDTH
+from config import SCREEN_HEIGHT, SCREEN_WIDTH, SLOWDOWN_PER_BLOCK
 from gameobjects.base import GameObject
 from gameobjects.block import Block
 from singletons.speed import speed_manager
@@ -68,7 +68,7 @@ class Player(GameObject):
 
     def collision(self, block: Block):
         if self.face==block.value:
-            speed_manager.adjust_speed(0.2)
+            speed_manager.adjust_speed(SLOWDOWN_PER_BLOCK)
         else:
             self.health -= block.value
         block.destroy()

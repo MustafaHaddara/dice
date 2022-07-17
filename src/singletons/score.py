@@ -1,4 +1,6 @@
 import pygame
+
+from config import POINTS_PER_BLOCK
 from gameobjects.base import GameObject
 
 #Setting up Fonts
@@ -21,7 +23,7 @@ class __ScoreManager(GameObject):
         surface.blit(s, (0,20))
 
     def inc_score(self):
-        self.score += 1
+        self.score += POINTS_PER_BLOCK
 
     def reset(self):
         self.score = 0
