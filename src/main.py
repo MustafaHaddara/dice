@@ -48,6 +48,7 @@ def start_the_game():
 
     # reset a bunch of global stuff before we start:
     NEXT_BLOCK_SPAWN = int( (BLOCK_SPAWN_MIN_RATE + BLOCK_SPAWN_MAX_RATE) / 2 )
+    level_manager.reset()
     score_manager.reset()
     speed_manager.reset()
 

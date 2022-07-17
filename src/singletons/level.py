@@ -21,5 +21,8 @@ class __LevelManager(GameObject):
         if self.tick > LEVEL_2:
             return 2
         return 1
+    
+    def reset(self):
+        self.level = 1
 
 level_manager = __LevelManager()
