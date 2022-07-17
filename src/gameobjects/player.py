@@ -1,8 +1,9 @@
 import pygame
 
-from config import SCREEN_HEIGHT, SCREEN_WIDTH, SLOWDOWN_PER_BLOCK
+from config import SCREEN_HEIGHT, SCREEN_WIDTH, LEVEL_1_SLOWDOWN_PER_BLOCK, LEVEL_2_SLOWDOWN_PER_BLOCK, LEVEL_3_SLOWDOWN_PER_BLOCK, LEVEL_4_SLOWDOWN_PER_BLOCK
 from gameobjects.base import GameObject
 from gameobjects.block import Block
+from singletons.level import level_manager
 from singletons.speed import speed_manager
 from sprites.dice import DICE_IMAGES
 
@@ -68,7 +69,16 @@ class Player(GameObject):
 
     def collision(self, block: Block):
         if self.face==block.value:
-            speed_manager.adjust_speed(SLOWDOWN_PER_BLOCK)
+            speed_manager.adjust_speed(get_slowdown_for_level())
         else:
             self.health -= block.value
         block.destroy()
+
+def get_slowdown_for_level():
+    level = level_manager.current_level()
+    return {
+        1: LEVEL_1_SLOWDOWN_PER_BLOCK,
+        2: LEVEL_2_SLOWDOWN_PER_BLOCK,
+        3: LEVEL_3_SLOWDOWN_PER_BLOCK,
+        4: LEVEL_4_SLOWDOWN_PER_BLOCK,
+    }[level]

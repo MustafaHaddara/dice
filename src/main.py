@@ -14,6 +14,7 @@ from config import SCREEN_HEIGHT, SCREEN_WIDTH, BLOCK_SPAWN_MIN_RATE, BLOCK_SPAW
 from gameobjects.background import BACKGROUND_IMAGE, Background
 from gameobjects.block import Block
 from gameobjects.player import Player
+from singletons.level import level_manager
 from singletons.score import score_manager
 from singletons.speed import speed_manager
  
@@ -53,6 +54,7 @@ def start_the_game():
     player = Player()
     game_objects = [
         speed_manager,
+        level_manager,
         Background([0, 0]),
         Background([0, BACKGROUND_IMAGE.get_height()]),
         Background([0, 2 * BACKGROUND_IMAGE.get_height()]),
@@ -92,13 +94,7 @@ def start_the_game():
 
         # spawn new blocks
         if tick == NEXT_BLOCK_SPAWN:
-            num_to_spawn = 1
-            if tick >= LEVEL_4:
-                num_to_spawn = 4
-            elif tick >= LEVEL_3:
-                num_to_spawn = 3
-            elif tick >= LEVEL_2:
-                num_to_spawn = 2
+            num_to_spawn = level_manager.current_level()
 
             random.shuffle(LANES)
 
